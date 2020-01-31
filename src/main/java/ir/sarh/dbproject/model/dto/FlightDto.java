@@ -19,8 +19,6 @@ public class FlightDto {
 
     private AirPortDto source;
 
-    private Instant outTime;
-
     private AirPortDto dest1;
 
     private AirPortDto dest2;

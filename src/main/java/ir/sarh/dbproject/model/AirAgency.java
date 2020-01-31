@@ -1,9 +1,12 @@
 package ir.sarh.dbproject.model;
 
+import ir.sarh.dbproject.model.dto.AirAgencyDto;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Entity
 public class AirAgency {
@@ -21,6 +24,11 @@ public class AirAgency {
 
     @ManyToMany
     private List<FlightClass>  flightClasses = new ArrayList<>();
+
+    public AirAgencyDto toDto() {
+        return new AirAgencyDto(id, city, state, phoneNumbers, flightClasses.stream()
+                .map(FlightClass::toDto).collect(Collectors.toList()));
+    }
 
     public long getId() {
         return id;

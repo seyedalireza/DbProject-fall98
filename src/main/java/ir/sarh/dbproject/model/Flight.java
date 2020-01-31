@@ -1,5 +1,8 @@
 package ir.sarh.dbproject.model;
 
+import ir.sarh.dbproject.model.dto.FlightDto;
+import ir.sarh.dbproject.model.dto.PlaneDto;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -19,8 +22,6 @@ public class Flight {
     @NotNull
     private AirPort source;
 
-    private Instant outTime;
-
     @ManyToOne
     @NotNull
     private AirPort dest1;
@@ -33,6 +34,10 @@ public class Flight {
 
     @ManyToOne
     private Plane plane;
+
+    public FlightDto toDto() {
+        return new FlightDto(id, time, source.toDto(), dest1.toDto(), dest2.toDto(), dest1ArriveTime, dest2ArriveTime, plane.toDto());
+    }
 
     public long getId() {
         return id;
@@ -56,14 +61,6 @@ public class Flight {
 
     public void setSource(AirPort source) {
         this.source = source;
-    }
-
-    public Instant getOutTime() {
-        return outTime;
-    }
-
-    public void setOutTime(Instant outTime) {
-        this.outTime = outTime;
     }
 
     public AirPort getDest1() {

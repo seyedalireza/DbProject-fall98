@@ -1,5 +1,7 @@
 package ir.sarh.dbproject.model;
 
+import ir.sarh.dbproject.model.dto.FlightClassDto;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -12,6 +14,10 @@ public class FlightClass {
     private String reception;
 
     private long price;
+
+    public FlightClassDto toDto() {
+        return new FlightClassDto(new FlightClassDto.Key(id.getFlight().toDto(), id.getFlight().getId()), reception, price);
+    }
 
     public FlightClassKey getId() {
         return id;

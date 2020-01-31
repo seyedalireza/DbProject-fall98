@@ -1,5 +1,7 @@
 package ir.sarh.dbproject.model;
 
+import ir.sarh.dbproject.model.dto.TicketDto;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -23,6 +25,10 @@ public class Ticket {
     @NotNull
     @ManyToOne
     private FlightClass flightClass;
+
+    public TicketDto toDto() {
+        return new TicketDto(id, passenger.toDto(), airAgency.toDto(), flightClass.toDto());
+    }
 
     public long getId() {
         return id;

@@ -1,5 +1,7 @@
 package ir.sarh.dbproject.model;
 
+import ir.sarh.dbproject.model.dto.PassengerDto;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -27,11 +29,15 @@ public class Passenger {
     @NotNull
     private Instant birthDay;
 
+    public PassengerDto toDto() {
+        return new PassengerDto(id, name, familyName, phoneNumber, email, birthDay);
+    }
+
     public long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

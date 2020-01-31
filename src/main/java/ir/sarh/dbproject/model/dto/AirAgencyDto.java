@@ -24,5 +24,4 @@ public class AirAgencyDto {
     private List<String> phoneNumbers = new ArrayList<>();
 
     private List<FlightClassDto> flightClassDtos = new ArrayList<>();
-
 }

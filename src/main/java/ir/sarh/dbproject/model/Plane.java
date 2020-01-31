@@ -1,5 +1,7 @@
 package ir.sarh.dbproject.model;
 
+import ir.sarh.dbproject.model.dto.PlaneDto;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -26,6 +28,10 @@ public class Plane {
 
     @ManyToOne
     private Airline airline;
+
+    public PlaneDto toDto() {
+        return new PlaneDto(id, model, productionYear, insurance, capacity, maxFlightAllowed, airline.toDto());
+    }
 
     public long getId() {
         return id;
