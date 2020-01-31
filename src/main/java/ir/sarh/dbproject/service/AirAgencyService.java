@@ -132,7 +132,6 @@ public class AirAgencyService {
     }
 
     public void addFlightClass(FlightClassDto flightDto) {
-//        Optional<AirAgency> airAgency = agencyRepository.findById(airAgencyDto.getId());
         FlightClass flightClass = new FlightClass();
         flightClass.setId(new FlightClassKey(flightRepository.getOne(flightDto.getId().getFlightDto().getId()), null));
         flightClass.setPrice(flightDto.getPrice());
