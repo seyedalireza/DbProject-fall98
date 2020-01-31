@@ -1,0 +1,3 @@
+SELECT F.Plane from Plane join Flight F on Plane.ID = F.Plane
+group by F.Plane
+having count(*) >= (select P2.MaxNumberOfFlightAllowed from plane as P2 where P2.ID = F.Plane )
