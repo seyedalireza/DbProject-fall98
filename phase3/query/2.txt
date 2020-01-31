@@ -1,0 +1,2 @@
+select City, desCity, min(dest1arrivaltime- dateandtime) from (select * from project_2.public.flight join airport a on source = a.id join (select a2.id, a2.City as desCity from airport as a2) a3 on dest1 = a3.id) as fast
+group by City, desCity;
