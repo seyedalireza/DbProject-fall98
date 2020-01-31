@@ -1,0 +1,1 @@
+select nid from ClassAirAgencyPassenger where FlightID = 3; --Flight ID is given
