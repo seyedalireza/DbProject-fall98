@@ -7,6 +7,12 @@ create table AirLine
     Name  char(250),
     PRIMARY KEY (ID)
 );
+insert into AirLine
+values (1, null, 'Zagros');
+insert into AirLine
+values (2, null, 'Iran Air');
+insert into Airline
+values (3, null, 'Mahan');
 
 
 create table Plane
@@ -23,6 +29,20 @@ create table Plane
         on update cascade
         on delete cascade
 );
+insert into Plane
+values (1, 'Fokker 100', 2010, 'Melli', 2, 2, 1);
+insert into Plane
+values (2, 'Airbus A380', 2005, 'Melli', 3, 3, 1);
+insert into Plane
+values (3, 'QA2', 2012, 'Melli', 2, 3, 1);
+insert into Plane
+values (4, 'Fokker 110', 2007, 'Sina', 1, 2, 2);
+insert into Plane
+values (5, 'Airbus b2', 2008, 'Sina', 2, 2, 2);
+insert into Plane
+values (6, 'QA1', 2015, 'Sina', 5, 1, 2);
+insert into Plane
+values (7, 'OW2', 2016, 'Mehr', 3, 3, 3);
 
 create table AirPort
 (
@@ -34,16 +54,24 @@ create table AirPort
     primary key (ID),
     CHECK ( Kind = 'International' or Kind = 'National' or (Kind is null))
 );
+insert into AirPort
+values (1, 'Tehran', 'Tehran', null, 'International');
+insert into AirPort
+values (2, 'Esfahan', 'Esfahan', null, 'National');
+insert into AirPort
+values (3, 'Mashhaf', 'KH Razavi', null, 'International');
+insert into AirPort
+values (4, 'Zahedan', 'Sistan and Balouchestan', null, 'National');
 
 create table Flight
 (
     ID               int not null,
-    DateAndTime      int,
+    DateAndTime      date,
     Source           int,
     Dest1            int not null,
-    Dest1ArrivalTime int,
+    Dest1ArrivalTime date,
     Dest2            int,
-    Dest2ArrivalTime int,
+    Dest2ArrivalTime date,
     Plane            int,
     PRIMARY KEY (ID),
     FOREIGN KEY (Source) REFERENCES AirPort (ID)
@@ -61,6 +89,17 @@ create table Flight
 
 );
 
+insert into Flight
+values (1, '2020-01-20 17:00:00', 1, 2, '2020-01-20 18:20:00', null, null, 1);
+insert into Flight
+values (2, '2020-01-18 15:00:00', 1, 3, '2020-01-18 17:00:00', null, null, 4);
+insert into Flight
+values (3, '2020-01-20 11:00:00', 1, 2, '2020-01-20 12:10:00', null, null, 3);
+insert into flight
+values (4, '2020-01-19 17:00:00', 1, 2, '2020-01-19 18:20:00', null, null, 1);
+insert into flight
+values (5, '2020-01-21 10:00:00', 2, 1, '2020-01-21 11:30:00', null, null, 2);
+
 create table FlightClass
 (
     FlightID  int not null,
@@ -72,6 +111,20 @@ create table FlightClass
         on update cascade
         on delete cascade
 );
+insert into FlightClass
+values (1, 1, null, 150);
+insert into FlightClass
+values (1, 2, null, 250);
+insert into FlightClass
+values (2, 1, null, 100);
+insert into FlightClass
+values (3, 1, null, 200);
+insert into FlightClass
+values (4, 1, null, 150);
+insert into FlightClass
+values (4, 2, null, 250);
+insert into FlightClass
+values (5, 1, null, 150);
 
 create table AirAgency
 (
@@ -80,6 +133,12 @@ create table AirAgency
     State char(250),
     PRIMARY KEY (ID)
 );
+insert into AirAgency
+values (1, 'Tehran', 'Tehran');
+insert into AirAgency
+values (2, 'Mashhad', 'Kh Razavi');
+insert into AirAgency
+values (3, 'Esfahan', 'Esfahan');
 
 create table AirAgencyPhoneNumbers
 (
@@ -94,7 +153,7 @@ create table AirAgencyPhoneNumbers
 create table ClassAirAgency
 (
     AirAgencyID int not null,
-    FlightID     int not null,
+    FlightID    int not null,
     ClassID     int not null,
     PRIMARY KEY (AirAgencyID, FlightID, ClassID),
     Foreign Key (AirAgencyID) REFERENCES AirAgency (ID)
@@ -107,6 +166,29 @@ create table ClassAirAgency
         on update cascade
         on delete cascade
 );
+insert into ClassAirAgency
+values (1, 1, 1);
+insert into ClassAirAgency
+values (1, 1, 2);
+insert into ClassAirAgency
+values (1, 2, 1);
+insert into ClassAirAgency
+values (1, 3, 1);
+insert into ClassAirAgency
+values (1, 4, 1);
+insert into ClassAirAgency
+values (1, 4, 2);
+insert into ClassAirAgency
+values (2, 1, 1);
+insert into ClassAirAgency
+values (2, 1, 2);
+insert into ClassAirAgency
+values (2, 4, 1);
+insert into ClassAirAgency
+values (2, 4, 2);
+insert into ClassAirAgency
+values (2, 5, 1);
+
 
 create table Passenger
 (
@@ -118,6 +200,13 @@ create table Passenger
     BirthDay    int,
     PRIMARY KEY (NID)
 );
+insert into passenger
+values (1, 'ali', 'alavi', '09012345678', null, null);
+insert into passenger
+values (2, 'ehsan', 'ehsani', '09876543210', null, null);
+insert into passenger
+values (3, 'maryam', 'omidi', null, null, null);
+
 
 create table ClassAirAgencyPassenger
 (
@@ -137,6 +226,16 @@ create table ClassAirAgencyPassenger
         on delete cascade,
     FOREIGN KEY (FlightID, ClassID) REFERENCES FlightClass (FlightID, ID)
         on update cascade
+        on delete cascade,
+    FOREIGN KEY (AirAgencyID, FlightID, ClassID) REFERENCES ClassAirAgency (AirAgencyID, FlightID, ClassID)
+        on update cascade
         on delete cascade
+
 );
+insert into ClassAirAgencyPassenger values (1, 1, 1, 1);
+insert into ClassAirAgencyPassenger values (1, 2, 5, 1);
+insert into ClassAirAgencyPassenger values (2, 1, 2, 1);
+
+
+
 
