@@ -1,0 +1,112 @@
+2020-01-31 01:36:52,285 INFO ir.sarh.dbproject.AirAgencyApplication [main] Starting AirAgencyApplication on sarh with PID 19049 (/media/sarh/HomeWorks/Cources/fall98/DB/project/rss_feed/DbProject-fall98/target/classes started by sarh in /media/sarh/HomeWorks/Cources/fall98/DB/project/rss_feed/DbProject-fall98)
+2020-01-31 01:36:52,293 INFO ir.sarh.dbproject.AirAgencyApplication [main] No active profile set, falling back to default profiles: default
+2020-01-31 01:36:53,994 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2020-01-31 01:36:53,995 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2020-01-31 01:36:54,091 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2020-01-31 01:36:54,522 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-01-31 01:36:54,801 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2020-01-31 01:36:54,827 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2020-01-31 01:36:54,853 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2020-01-31 01:36:55,069 INFO ir.sarh.dbproject.AirAgencyApplication [main] Started AirAgencyApplication in 3.746 seconds (JVM running for 4.519)
+2020-01-31 01:37:43,762 INFO ir.sarh.dbproject.AirAgencyApplication [main] Starting AirAgencyApplication on sarh with PID 19256 (/media/sarh/HomeWorks/Cources/fall98/DB/project/rss_feed/DbProject-fall98/target/classes started by sarh in /media/sarh/HomeWorks/Cources/fall98/DB/project/rss_feed/DbProject-fall98)
+2020-01-31 01:37:43,766 INFO ir.sarh.dbproject.AirAgencyApplication [main] No active profile set, falling back to default profiles: default
+2020-01-31 01:37:45,627 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2020-01-31 01:37:45,628 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2020-01-31 01:37:45,731 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2020-01-31 01:37:45,809 INFO org.apache.catalina.core.StandardService [main] Stopping service [Tomcat]
+2020-01-31 01:37:45,938 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in ir.sarh.dbproject.controller.RestApi required a bean of type 'java.sql.Connection' that could not be found.
+
+The following candidates were found but could not be injected:
+	- User-defined bean method 'connect' in 'DataBaseConfig' ignored as the bean value is null
+
+
+Action:
+
+Consider revisiting the entries above or defining a bean of type 'java.sql.Connection' in your configuration.
+
+2020-01-31 01:38:39,273 INFO ir.sarh.dbproject.AirAgencyApplication [main] Starting AirAgencyApplication on sarh with PID 19425 (/media/sarh/HomeWorks/Cources/fall98/DB/project/rss_feed/DbProject-fall98/target/classes started by sarh in /media/sarh/HomeWorks/Cources/fall98/DB/project/rss_feed/DbProject-fall98)
+2020-01-31 01:38:39,278 INFO ir.sarh.dbproject.AirAgencyApplication [main] No active profile set, falling back to default profiles: default
+2020-01-31 01:38:41,212 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2020-01-31 01:38:41,213 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2020-01-31 01:38:41,309 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2020-01-31 01:38:41,386 INFO org.apache.catalina.core.StandardService [main] Stopping service [Tomcat]
+2020-01-31 01:38:41,541 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in ir.sarh.dbproject.controller.RestApi required a bean of type 'java.sql.Connection' that could not be found.
+
+The following candidates were found but could not be injected:
+	- User-defined bean method 'connect' in 'DataBaseConfig' ignored as the bean value is null
+
+
+Action:
+
+Consider revisiting the entries above or defining a bean of type 'java.sql.Connection' in your configuration.
+
+2020-01-31 14:16:58,437 INFO ir.sarh.dbproject.AirAgencyApplication [main] Starting AirAgencyApplication on sarh with PID 15267 (/media/sarh/HomeWorks/Cources/fall98/DB/project/rss_feed/DbProject-fall98/target/classes started by sarh in /media/sarh/HomeWorks/Cources/fall98/DB/project/rss_feed/DbProject-fall98)
+2020-01-31 14:16:58,448 INFO ir.sarh.dbproject.AirAgencyApplication [main] No active profile set, falling back to default profiles: default
+2020-01-31 14:17:03,361 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2020-01-31 14:17:03,362 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2020-01-31 14:17:03,776 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2020-01-31 14:17:04,065 INFO org.apache.catalina.core.StandardService [main] Stopping service [Tomcat]
+2020-01-31 14:17:04,444 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in ir.sarh.dbproject.controller.RestApi required a bean of type 'java.sql.Connection' that could not be found.
+
+The following candidates were found but could not be injected:
+	- User-defined bean method 'connect' in 'DataBaseConfig' ignored as the bean value is null
+
+
+Action:
+
+Consider revisiting the entries above or defining a bean of type 'java.sql.Connection' in your configuration.
+
+2020-01-31 14:22:51,301 INFO ir.sarh.dbproject.AirAgencyApplication [main] Starting AirAgencyApplication on sarh with PID 16367 (/media/sarh/HomeWorks/Cources/fall98/DB/project/rss_feed/DbProject-fall98/target/classes started by sarh in /media/sarh/HomeWorks/Cources/fall98/DB/project/rss_feed/DbProject-fall98)
+2020-01-31 14:22:51,318 INFO ir.sarh.dbproject.AirAgencyApplication [main] No active profile set, falling back to default profiles: default
+2020-01-31 14:22:53,789 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2020-01-31 14:22:53,789 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2020-01-31 14:22:53,912 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2020-01-31 14:22:54,318 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-01-31 14:22:54,618 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2020-01-31 14:22:54,666 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2020-01-31 14:22:54,729 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2020-01-31 14:22:55,051 INFO ir.sarh.dbproject.AirAgencyApplication [main] Started AirAgencyApplication in 5.175 seconds (JVM running for 6.282)
+2020-01-31 14:23:28,071 INFO ir.sarh.dbproject.AirAgencyApplication [main] Starting AirAgencyApplication on sarh with PID 16532 (/media/sarh/HomeWorks/Cources/fall98/DB/project/rss_feed/DbProject-fall98/target/classes started by sarh in /media/sarh/HomeWorks/Cources/fall98/DB/project/rss_feed/DbProject-fall98)
+2020-01-31 14:23:28,078 INFO ir.sarh.dbproject.AirAgencyApplication [main] No active profile set, falling back to default profiles: default
+2020-01-31 14:23:29,774 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2020-01-31 14:23:29,775 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2020-01-31 14:23:29,881 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2020-01-31 14:23:30,333 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-01-31 14:23:30,606 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2020-01-31 14:23:30,630 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2020-01-31 14:23:30,663 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2020-01-31 14:23:30,857 INFO ir.sarh.dbproject.AirAgencyApplication [main] Started AirAgencyApplication in 3.807 seconds (JVM running for 4.608)
+2020-01-31 14:27:50,249 INFO ir.sarh.dbproject.AirAgencyApplication [main] Starting AirAgencyApplication on sarh with PID 17720 (/media/sarh/HomeWorks/Cources/fall98/DB/project/rss_feed/DbProject-fall98/target/classes started by sarh in /media/sarh/HomeWorks/Cources/fall98/DB/project/rss_feed/DbProject-fall98)
+2020-01-31 14:27:50,264 INFO ir.sarh.dbproject.AirAgencyApplication [main] No active profile set, falling back to default profiles: default
+2020-01-31 14:27:52,897 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2020-01-31 14:27:52,897 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2020-01-31 14:27:53,044 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2020-01-31 14:27:53,617 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-01-31 14:27:54,043 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2020-01-31 14:27:54,073 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2020-01-31 14:27:54,111 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2020-01-31 14:27:54,419 INFO ir.sarh.dbproject.AirAgencyApplication [main] Started AirAgencyApplication in 5.403 seconds (JVM running for 6.679)
