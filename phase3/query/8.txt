@@ -1,0 +1,2 @@
+SELECT Flight.ID, Flight.Plane, Flight.Source, Flight.Dest1, Flight.Dest2, Flight.DateAndTime  from Flight join Plane P on Flight.Plane = P.ID
+where P.AirLine = 1; /* 1 is given Id

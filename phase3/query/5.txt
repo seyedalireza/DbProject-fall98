@@ -1,3 +1,1 @@
-select classId, count(*) from classairagencypassenger
-group by ClassID
-order by count(*);
+select classId, count(*) from classairagencypassenger group by ClassID order by count(*);
