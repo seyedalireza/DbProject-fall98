@@ -1,0 +1,142 @@
+create database Project;
+
+create table AirLine
+(
+    ID    int not null,
+    Owner char(250),
+    Name  char(250),
+    PRIMARY KEY (ID)
+);
+
+
+create table Plane
+(
+    ID                       int not null,
+    Model                    char(250),
+    ProductionYear           int,
+    Insurance                char(250),
+    Capacity                 int not null,
+    MaxNumberOfFlightAllowed int not null,
+    AirLine                  int,
+    PRIMARY KEY (ID),
+    FOREIGN KEY (AirLine) references AirLine (ID)
+        on update cascade
+        on delete cascade
+);
+
+create table AirPort
+(
+    ID      int not null,
+    City    char(250),
+    State   char(250),
+    Address char(250),
+    Kind    char(250),
+    primary key (ID),
+    CHECK ( Kind = 'International' or Kind = 'National' or (Kind is null))
+);
+
+create table Flight
+(
+    ID               int not null,
+    DateAndTime      int,
+    Source           int,
+    Dest1            int not null,
+    Dest1ArrivalTime int,
+    Dest2            int,
+    Dest2ArrivalTime int,
+    Plane            int,
+    PRIMARY KEY (ID),
+    FOREIGN KEY (Source) REFERENCES AirPort (ID)
+        on update cascade
+        on delete cascade,
+    FOREIGN KEY (Dest1) REFERENCES AirPort (ID)
+        on update cascade
+        on delete cascade,
+    FOREIGN KEY (Dest2) REFERENCES AirPort (ID)
+        on update cascade
+        on delete cascade,
+    FOREIGN KEY (Plane) REFERENCES Plane (ID)
+        on update cascade
+        on delete cascade
+
+);
+
+create table FlightClass
+(
+    FlightID  int not null,
+    ID        int not null,
+    Reception char(250),
+    Price     char(250),
+    PRIMARY KEY (FlightID, ID),
+    FOREIGN KEY (FlightID) REFERENCES Flight (ID)
+        on update cascade
+        on delete cascade
+);
+
+create table AirAgency
+(
+    ID    int not null,
+    City  char(250),
+    State char(250),
+    PRIMARY KEY (ID)
+);
+
+create table AirAgencyPhoneNumbers
+(
+    AirAgencyID int not null,
+    PhoneNumber char(250),
+    PRIMARY KEY (AirAgencyID, PhoneNumber),
+    FOREIGN KEY (AirAgencyID) REFERENCES AirAgency (ID)
+        on update cascade
+        on delete cascade
+);
+
+create table ClassAirAgency
+(
+    AirAgencyID int not null,
+    FlightID     int not null,
+    ClassID     int not null,
+    PRIMARY KEY (AirAgencyID, FlightID, ClassID),
+    Foreign Key (AirAgencyID) REFERENCES AirAgency (ID)
+        on update cascade
+        on delete cascade,
+    FOREIGN KEY (FlightID) REFERENCES Flight (ID)
+        on update cascade
+        on delete cascade,
+    FOREIGN KEY (FlightID, ClassID) REFERENCES FlightClass (FlightID, ID)
+        on update cascade
+        on delete cascade
+);
+
+create table Passenger
+(
+    NID         int not null,
+    Name        char(250),
+    FamilyName  char(250),
+    PhoneNumber char(250),
+    Email       char(250),
+    BirthDay    int,
+    PRIMARY KEY (NID)
+);
+
+create table ClassAirAgencyPassenger
+(
+    NID         int not null,
+    AirAgencyID int not null,
+    FlightID    int not null,
+    ClassID     int not null,
+    PRIMARY KEY (NID, AirAgencyID, FlightID, ClassID),
+    FOREIGN KEY (NID) REFERENCES Passenger (NID)
+        on update cascade
+        on delete cascade,
+    Foreign Key (AirAgencyID) REFERENCES AirAgency (ID)
+        on update cascade
+        on delete cascade,
+    FOREIGN KEY (FlightID) REFERENCES Flight (ID)
+        on update cascade
+        on delete cascade,
+    FOREIGN KEY (FlightID, ClassID) REFERENCES FlightClass (FlightID, ID)
+        on update cascade
+        on delete cascade
+);
+
