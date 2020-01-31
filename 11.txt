@@ -1,0 +1,6 @@
+select max(Price)
+from FlightClass
+         join ClassAirAgencyPassenger c on c.classid = FlightClass.id and c.flightid = FlightClass.FlightID
+         join Flight F on c.FlightID = F.ID
+where nid = 1
+  and DateAndTime > '2020-01-19 10:00:00';
