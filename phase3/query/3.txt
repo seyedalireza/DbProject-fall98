@@ -1,0 +1,5 @@
+select PDD.NID, Dest1, Dest2 , PDD.count from (select CAAP.NID, Dest1, Dest2 , count(*) as count from passenger join ClassAirAgencyPassenger CAAP on Passenger.NID = CAAP.NID join Flight F on CAAP.FlightID = F.ID
+group by CAAP.NID, Dest1, Dest2) as PDD
+where PDD.count >= any((select count(*) as count from passenger join ClassAirAgencyPassenger CAAP1 on Passenger.NID = CAAP1.NID join Flight F1 on CAAP1.FlightID = F1.ID
+where CAAP1.NID = PDD.NID
+group by CAAP1.NID, Dest1, Dest2));
