@@ -1,0 +1,17 @@
+CREATE TRIGGER CancellingTrigger
+    AFTER DELETE
+    ON ClassAirAgencyPassenger
+    FOR EACH ROW
+EXECUTE PROCEDURE ReturnMoney();
+CREATE OR REPLACE FUNCTION ReturnMoney()
+    RETURNS TRIGGER
+AS
+$BODY$
+BEGIN
+    UPDATE Passenger
+    SET payment = payment - (SELECT Price FROM flightclass WHERE ID = old.ClassID AND FlightID = old.FlightID) *
+                                         (SELECT returnedpercent FROM flightclass WHERE ID = old.ClassID and FlightID = old.FlightID)
+    WHERE NID = old.nid;
+    RETURN old;
+END;
+$BODY$ LANGUAGE plpgsql;
